@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento</title>
+    <meta> 
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        label, input, textarea, button {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+        }
+        button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body bgcolor="blue">
+    <font color="blue"> texto texto texto</font>
+    <div class="container">
+        <h2>Pagamento</h2>
+        <form action="#" method="post">
+
+
+           
+        <select id="ddlcores</select>
+            <button type="submit">Concluir</button>
+            <a href="https://www.exemplo.com">Clique aqui para acessar o site</a>
+
+        </form>s
+         <img src="ody.jpg">
+    </div>
+
+</body> 
+    </html>
