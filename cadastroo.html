@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+
+ 
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+            url('imagem2.jpg') no-repeat center center fixed;
+            background-size: cover;
+            height: 100vh;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: rgba(255, 255, 255, 0.9);
+            margin-top: 50px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #007BFF;
+        }
+
+        label {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        label span {
+            color: red;
+            font-weight: bold;
+        }
+
+        input {
+            display: block;
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #333;
+            box-sizing: border-box;
+        }
+
+        /* Mudança de cor da borda quando o campo está vazio */
+        input:invalid {
+            border: 2px solid red;
+        }
+
+        .btn {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 12px 0;
+            cursor: pointer;
+            text-align: center;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        .btn:hover {
+            background-color: #0056b3;
+        }
+
+        a {
+            display: inline-block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .required-text {
+            font-size: 14px;
+            color: #999;
+            margin-top: -10px;
+        }
+
+        .required-text span {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h2>ODY PARK</h2>
+        <!-- O formulário agora terá um método POST e um destino -->
+        <form action="datas.html" method="post">
+            <label for="nome">Nome: <span>*</span></label>
+            <input type="text" id="nome" name="nome" required>
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
+
+            <label for="email">E-mail: <span>*</span></label>
+            <input type="email" id="email" name="email" required>
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
+
+            <!-- Botão de envio do formulário -->
+            <button type="submit" class="btn">Próximo</button>
+        </form>
+    </div>
+</body>
+
+</html>
