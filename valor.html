@@ -1,57 +1,177 @@
 <!DOCTYPE html>
+<html lang="pt-br"><!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Valores</title>
-    <meta> 
+
+    <!-- Google Fonts para a fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Poppins', sans-serif; /* Garantido que todo o texto utilize Poppins */
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('imagem3.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
         }
-        .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        label, input, textarea, button {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: #007BFF;
+
+        header {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+            font-size: 2.5em;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        header h4 {
+            margin: 0;
+        }
+
+        nav {
+            padding: 20px;
+            text-align: center;
+            background-color: transparent;
+        }
+
+        nav a {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: #e91e63; /* Rosa vibrante */
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+            font-weight: 600;
+            font-family: 'Poppins', sans-serif;
+            border-radius: 30px;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        nav a:hover {
+            background-color: #d81b60; /* Tom mais escuro ao passar o mouse */
+            transform: scale(1.05);
+            text-decoration: none;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* Ajustando as colunas para ficarem do mesmo tamanho */
+            gap: 40px;
+            padding: 40px 60px;
+            justify-items: center;
+            align-items: stretch;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .column {
+            width: 100%;
+            max-width: 100%;
+            background-color: rgba(255, 255, 255, 0.85);
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        .column h3 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #444;
+            text-align: center;
+        }
+
+        .column p {
+            font-size: 1.1em;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .column ul {
+            padding-left: 20px;
+            text-align: left;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            width: 100%;
         }
     </style>
 </head>
-<body bgcolor="blue">
-    <font color="blue"> texto texto texto</font>
-    <div class="container">
-        <h2>Valores</h2>
-        <form action="#" method="post">
-            <label for="nome"><b>Adulto R$100,00</b>
-           <br> <b>Criança R$80,00</b>
-           <br> <b> Quarto R$200,00</b>
-           <br><b>Estacionamento R$25,00</b></label>
-           
-            
-            <button type="submit">Próximo</button>
-            <a href="https://www.exemplo.com">Clique aqui para acessar o site</a>
+<body>
 
-        </form>
-         <img src="ody.jpg">
+<header>
+    <h4>Ody Park</h4>
+</header>
+
+<div class="content">
+    <div class="column">
+        <h3>Valores de Hospedagem</h3>
+        <p>Escolha a melhor opção de hospedagem e desfrute do conforto sem igual!</p>
+        <ul>
+            <li>Suítes de Luxo - R$ 250,00/noite</li>
+            <li>Chalés - R$ 150,00/noite</li>
+            <li>Quartos - R$ 80,00/noite</li>
+            <li>Pousada - R$ 150,00/noite</li>
+            <li>Camping - R$ 80,00/noite</li>
+        </ul>
     </div>
 
-</body> 
-    </html>
+    <div class="column">
+        <h3>Valores das Atrações</h3>
+        <p>Descubra as atrações incríveis e preços acessíveis para curtir em família!</p>
+        <ul>
+            <li>2 Horas - R$30,00</li>
+            <li>3 Horas - R$40,00</li>
+            <li>4 Horas - R$60,00</li>
+            <li>5 Horas - R$70,00</li>
+        </ul>
+    </div>
+
+    <div class="column">
+        <h3>Valores da Gastronomia</h3>
+        <p>Deliciosas opções para matar a fome e a sede enquanto você se diverte!</p>
+        <ul>
+            <li>Lanches - a partir de R$ 20,00</li>
+            <li>Almoço self-service - R$ 40,00</li>
+            <li>Bebidas - a partir de R$ 5,00</li>
+            <li>Sobremesas - a partir de R$ 15,00</li>
+            <li>Saladas - a partir de R$ 18,00</li>
+        </ul>
+    </div>
+
+    <div class="column">
+        <h3>Valores do Estacionamento</h3>
+        <p>Estacione com segurança e comodidade, com preços acessíveis!</p>
+        <ul>
+            <li>Motos - R$ 10,00/dia</li>
+            <li>Carros - R$ 30,00/dia</li>
+            <li>Ônibus - R$ 50,00/dia</li>
+            <li>Estacionamento coberto - R$ 40,00/dia</li>
+        </ul>
+    </div>
+</div>
+
+<nav>
+    <a href="agradecimento1.html" target="_blank">Reserve sua viagem!</a>
+</nav>
+
+<footer>
+    &copy; 2025 Ody Park - Todos os direitos reservados
+</footer>
+
+</body>
+</html>
