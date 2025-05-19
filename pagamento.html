@@ -1,55 +1,114 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pagamento</title>
-    <meta> 
+    
+    <!-- Google Fonts para a fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+            url('imagem5.jpg') no-repeat center center fixed;
+            background-size: cover;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            height: 100vh;
+            padding-top: 50px;
         }
+
         .container {
             max-width: 400px;
-            margin: auto;
+            width: 100%;
             padding: 20px;
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.85);
+            color: #333;
+            box-sizing: border-box;
         }
-        label, input, textarea, button {
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        p {
+            text-align: center;
+            font-size: 1.1em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        label, select {
             display: block;
             width: 100%;
             margin-bottom: 10px;
+            font-size: 1.1em;
+            color: #333;
         }
-        button {
+
+        select {
+            padding: 10px;
+            background-color: #f8f8f8;
+            color: #333;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .btn {
             background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 12px;
             cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 1.1em;
+            margin-top: 10px;
+            display: block;
+            width: 100%;
+            box-sizing: border-box;
         }
-        button:hover {
+
+        .btn:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
-<body bgcolor="blue">
-    <font color="blue"> texto texto texto</font>
+
+<body>
+
     <div class="container">
         <h2>Pagamento</h2>
-        <form action="#" method="post">
+        
+        <p><strong>Estamos quase lá! Revise suas informações e finalize sua compra com segurança.</strong></p>
+        <p><strong>Valor total: R$ 550,00</strong></p>
 
+        <form action="agradecimento2.html" method="post">
+            <label for="pagamento">Selecione a forma de pagamento:</label>
+            <select id="pagamento" name="formaPagamento" required>
+                <option value="">Escolha uma opção</option>
+                <option value="pix">Pix</option>
+                <option value="debito">Cartão de Débito</option>
+                <option value="credito">Cartão de Crédito</option>
+            </select>
 
-           
-        <select id="ddlcores</select>
-            <button type="submit">Concluir</button>
-            <a href="https://www.exemplo.com">Clique aqui para acessar o site</a>
-
-        </form>s
-         <img src="ody.jpg">
+            <!-- Botão de envio do formulário -->
+            <button type="submit" class="btn">Finalizar Pagamento</button>
+        </form>
     </div>
 
-</body> 
-    </html>
+</body>
+
+</html>
