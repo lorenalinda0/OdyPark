@@ -1,15 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Datas e informações</title>
-    <meta> 
+    <title>Datas e Informações</title>
+    
+    <!-- Google Fonts para a fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <style>
+        /* Aplicando a fonte Poppins em todo o texto */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
             margin: 20px;
+            padding: 0;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+            url('imagem4.jpg') no-repeat center center fixed;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
         }
+
         .container {
             max-width: 400px;
             margin: auto;
@@ -17,43 +30,80 @@
             border: 1px solid #ccc;
             border-radius: 5px;
             box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.85);
+            margin-top: 50px;
+            box-sizing: border-box;
         }
-        label, input, textarea, button {
+
+        h2 {
+            text-align: center;
+            color: #000;
+        }
+
+        label {
+            font-size: 16px;
+            color: #000;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
             display: block;
             width: 100%;
-            margin-bottom: 10px;
+            padding: 10px;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            color: #333;
+            box-sizing: border-box;
         }
-        button {
+
+        .btn {
             background-color: #007BFF;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 12px 0;
             cursor: pointer;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-top: 15px;
         }
-        button:hover {
+
+        .btn:hover {
             background-color: #0056b3;
         }
     </style>
 </head>
-<body bgcolor="blue">
-    <font color="blue"> texto texto texto</font>
-    <div class="container">
-    <h2>Datas e informações sobre a hospedagem</h2>
-        <form action="#" method="post">
-            <label for="nome">Data de Check-in e Check-out:</label>
-            <input type="" name="">
-            <Iabel for="nome">Quantidade de Pessoas:</Iabel>
-            <input type="" name="">
-            <Iabel for="nome"> Quantidade de Quartos:</Iabel>
-            <input type="" name="">
-            <Iabel for="nome">Quantidade de vagas no estacionamento:
-                <input type="nome">
-            <button type="submit">Próximo</button>
-            <a href="https://www.exemplo.com">Clique aqui para acessar o site</a>
 
+<body>
+
+    <div class="container">
+        <h2>Datas e Informações sobre a Hospedagem</h2>
+        <!-- Formulário com o atributo action que redireciona para 'pagamento.html' -->
+        <form action="pagamento.html" method="post">
+            <label for="checkin">Data de Check-in:</label>
+            <input id="checkin" name="checkin" type="date" required>
+
+            <label for="checkout">Data de Check-out:</label>
+            <input id="checkout" name="checkout" type="date" required>
+
+            <label for="pessoas">Quantidade de Pessoas:</label>
+            <input id="pessoas" name="pessoas" type="number" min="1" required>
+
+            <label for="quartos">Quantidade de Quartos:</label>
+            <input id="quartos" name="quartos" type="number" min="1" required>
+
+            <label for="vagas">Quantidade de vagas no estacionamento:</label>
+            <input id="vagas" name="vagas" type="number" min="0" required>
+
+            <!-- Botão de envio do formulário -->
+            <button type="submit" class="btn">Próximo</button>
         </form>
-         <img src="ody.jpg">
     </div>
 
-</body> 
-    </html>
+</body>
+
+</html>
