@@ -1,128 +1,14 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Conheça o Ody Park</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            background-image: url('capa.jpg');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-
-        header {
-            text-align: center;
-            padding: 10px 20px;
-            background-color: transparent;
-            color: white;
-            font-size: 2.5em;
-        }
-
-        header h4 {
-            margin: 0;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 10px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            margin: 0 130px;
-            text-decoration: none;
-            font-size: 40px;
-        }
-
-        nav a:hover {
-            text-decoration: underline;
-        }
-
-        .content {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            padding: 40px;
-            justify-items: center;
-            align-items: stretch;
-        }
-
-        .column {
-            width: 100%;
-            max-width: 300px;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            color: #333;
-        }
-
-        .column h3 {
-            font-size: 1.8em;
-            margin-bottom: 15px;
-            color: #444;
-            text-align: center;
-        }
-
-        .column p {
-            font-size: 1.1em;
-            line-height: 1.5;
-            text-align: center;
-        }
-
-        .column ul {
-            padding-left: 20px;
-            text-align: left;
-        }
-
-        .welcome-text {
-            color: black;
-            font-size: 48px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-        }
-
-        .welcome-text a {
-            display: block;
-            margin-top: 100px;
-            font-size: 24px;
-            color: #fff;
-            text-decoration: underline;
-        }
-
-        footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: auto;
-            width: 100%;
-        }
-
-    </style>
-</head>
-<body><!DOCTYPE html> 
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Conheça o Ody Park</title>
 
     <!-- Google Fonts para a fonte Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
     <style>
-        /* Aplicando a fonte Poppins em todo o texto */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -173,6 +59,22 @@
             background-color: #d81b60; /* Tom mais escuro ao passar o mouse */
             transform: scale(1.05);
             text-decoration: none;
+        }
+
+        /* Animação de brilho e pulo para o botão */
+        @keyframes pulseBounce {
+            0%, 100% {
+                transform: scale(1) translateY(0);
+                box-shadow: 0 0 10px 2px #ff4081;
+            }
+            50% {
+                transform: scale(1.1) translateY(-8px);
+                box-shadow: 0 0 20px 4px #ff80ab;
+            }
+        }
+
+        .brilho-bounce {
+            animation: pulseBounce 1.5s ease-in-out infinite;
         }
 
         .content {
@@ -237,13 +139,31 @@
             margin-top: auto;
             width: 100%;
         }
+
+        /* Estilo para o botão "Voltar ao topo" */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e91e63;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50%;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease;
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            transform: scale(1.1);
+        }
     </style>
 </head>
 <body>
-
-<header>
-    <h4>Ody Park</h4>
-</header>
 
 <div class="content">
     <div class="column">
@@ -295,12 +215,41 @@
 </div>
 
 <nav>
-    <a href="valores.html" target="_blank">Valores</a>
+    <!-- Adicionei a classe brilho-bounce para ativar animação -->
+    <a href="valores.html" target="_blank" class="brilho-bounce">Valores</a>
 </nav>
 
 <footer>
-    &copy; 2025 Ody Park - Todos os direitos reservados
+    &copy; 2025 Ody Park - Ana Julia, Lorena, Maria e Sofia
 </footer>
+
+<!-- Botão "Voltar ao topo" -->
+<button class="back-to-top" id="backToTopBtn" onclick="scrollToTop()">↑</button>
+
+<script>
+    // Mostrar o botão "Voltar ao topo" quando o usuário rolar para baixo
+    window.onscroll = function() {
+        toggleBackToTopBtn();
+    };
+
+    // Verifica a posição do scroll para mostrar/esconder o botão
+    function toggleBackToTopBtn() {
+        const backToTopBtn = document.getElementById('backToTopBtn');
+        if (window.scrollY > 300) {
+            backToTopBtn.classList.add('show');
+        } else {
+            backToTopBtn.classList.remove('show');
+        }
+    }
+
+    // Função para rolar até o topo suavemente
+    function scrollToTop() {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    }
+</script>
 
 </body>
 </html>
