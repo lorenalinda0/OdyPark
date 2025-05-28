@@ -1,111 +1,237 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Confirmação de Reserva - Odypark</title>
-    <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('imagem9.jpg') no-repeat center center fixed;
-            background-size: cover;
-            color: #fff;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Confirmação de Reserva - Odypark</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
+                  url('imagem9.jpg') no-repeat center center fixed;
+      background-size: cover;
+      color: #fff;
+      overflow-x: hidden;
+    }
 
-        .container {
-            max-width: 500px;
-            margin: 80px auto;
-            padding: 30px;
-            background-color: rgba(255, 255, 255, 0.85);
-            border-radius: 10px;
-            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-            text-align: center;
-            color: #333; /* Texto escuro para contraste */
-        }
+    .container {
+      max-width: 500px;
+      margin: 80px auto;
+      padding: 30px;
+      background-color: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+      text-align: center;
+      color: #333;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
 
-        h1 {
-            margin-bottom: 20px;
-            font-size: 2em;
-            color: #333;
-        }
+    .container.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
-        p {
-            font-size: 1.1em;
-            line-height: 1.6;
-            color: #555;
-        }
+    h1, h2, h4 {
+      margin-bottom: 20px;
+    }
 
-        .cta-box {
-            background-color: #f1f1f1;
-            padding: 20px;
-            border-radius: 10px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    .cta-box {
+      background-color: #fefefe;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 30px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      animation: fadeIn 1.5s ease;
+    }
 
-        .cta-box h2 {
-            font-size: 1.5em;
-            margin-bottom: 15px;
-            color: #222;
-        }
+    .cta-box h2 {
+      font-size: 1.6em;
+      color: #222;
+    }
 
-        .cta-box p {
-            font-size: 1em;
-            color: #444;
-            margin-bottom: 20px;
-        }
+    .cta-box h4 {
+      font-size: 1.1em;
+      color: #444;
+      margin-bottom: 20px;
+    }
 
-        .cta-box a {
-            display: inline-block;
-            padding: 12px 30px;
-            background-color: #e91e63;
-            color: white;
-            text-decoration: none;
-            font-size: 18px;
-            font-weight: bold;
-            border-radius: 30px;
-            transition: background-color 0.3s ease, transform 0.2s ease;
-        }
+    .cta-box a {
+      display: inline-block;
+      padding: 14px 36px;
+      background-color: #e91e63;
+      color: white;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 30px;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 15px rgba(233, 30, 99, 0.4);
+      cursor: pointer;
+      position: relative;
+      user-select: none;
+    }
 
-        .cta-box a:hover {
-            background-color: #d81b60;
-            transform: scale(1.05);
-        }
+    .cta-box a:hover {
+      background-color: #d81b60;
+      transform: scale(1.05);
+    }
 
-        .contact-info {
-            margin-top: 30px;
-            font-size: 1.2em;
-            color: #444;
-            background-color:
-            padding: 15px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-        }
+    /* Pulsing button animation by JS */
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(233, 30, 99, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 10px rgba(233, 30, 99, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(233, 30, 99, 0);
+      }
+    }
 
-        .contact-info a {
-            color: #28a745;
-            text-decoration: none;
-            font-weight: bold;
-        }
+    /* Modal styles */
+    #confirmModal {
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.6);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.3s ease;
+      z-index: 1000;
+    }
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    #confirmModal.visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    #confirmModal .modal-content {
+      background: white;
+      color: #333;
+      padding: 30px;
+      border-radius: 15px;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 12px 30px rgba(0,0,0,0.3);
+    }
+
+    #confirmModal button {
+      margin: 15px 10px 0 10px;
+      padding: 10px 25px;
+      font-size: 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+
+    #confirmModal button.confirm {
+      background-color: #e91e63;
+      color: white;
+    }
+
+    #confirmModal button.confirm:hover {
+      background-color: #d81b60;
+    }
+
+    #confirmModal button.cancel {
+      background-color: #ccc;
+      color: #333;
+    }
+
+    #confirmModal button.cancel:hover {
+      background-color: #aaa;
+    }
+  </style>
+
 </head>
 <body>
 
-    <div class="container">
+  <div class="container" id="mainContainer">
+    <div class="cta-box">
+      <h2>Pronto para viver essa experiência incrível?</h2>
+      <h4>Você já conhece o resort e viu os valores. Agora é hora de garantir sua diversão!</h4>
+      <a href="cadastroo.html" id="reserveBtn">Reservar agora</a>
+    </div>
+  </div>
 
-        <!-- Chamada para ação antes da reserva -->
-        <div class="cta-box">
-            <h2>Pronto para viver essa experiência incrível?</h2>
-            <h4>Você já conhece o resort e viu os valores. Agora é hora de garantir sua diversão!</h4>
-         <a href="cadastroo.html">Reservar agora</a>
-        </div>
+  <!-- Modal customizado -->
+  <div id="confirmModal">
+    <div class="modal-content">
+      <p>Deseja mesmo fazer sua reserva agora?</p>
+      <button class="confirm">Sim</button>
+      <button class="cancel">Cancelar</button>
+    </div>
+  </div>
+
+  <script>
+    // Mostrar container com efeito fade + slide ao carregar
+    window.addEventListener('load', () => {
+      document.getElementById('mainContainer').classList.add('visible');
+      pulseButton(); // começa o efeito pulse no botão
+    });
+
+    const reserveBtn = document.getElementById('reserveBtn');
+    const modal = document.getElementById('confirmModal');
+    const confirmBtn = modal.querySelector('.confirm');
+    const cancelBtn = modal.querySelector('.cancel');
+
+    // Função para pulse (botão "pulsa" suavemente)
+    function pulseButton() {
+      let grow = true;
+      let scale = 1;
+      function step() {
+        if (grow) {
+          scale += 0.0025;
+          if (scale >= 1.05) grow = false;
+        } else {
+          scale -= 0.0025;
+          if (scale <= 1) grow = true;
+        }
+        reserveBtn.style.transform = `scale(${scale})`;
+        requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    // Quando clica no botão de reservar, mostra o modal e cancela navegação padrão
+    reserveBtn.addEventListener('click', function(event) {
+      event.preventDefault();
+      modal.classList.add('visible');
+    });
+
+    // Confirmar reserva - redireciona para a página de cadastro
+    confirmBtn.addEventListener('click', () => {
+      window.location.href = reserveBtn.href;
+    });
+
+    // Cancelar reserva - fecha modal
+    cancelBtn.addEventListener('click', () => {
+      modal.classList.remove('visible');
+    });
+
+    // Fecha modal se clicar fora da caixa
+    modal.addEventListener('click', (e) => {
+      if(e.target === modal) {
+        modal.classList.remove('visible');
+      }
+    });
+
+    // Fecha modal se apertar ESC
+    document.addEventListener('keydown', (e) => {
+      if (e.key === "Escape" && modal.classList.contains('visible')) {
+        modal.classList.remove('visible');
+      }
+    });
+  </script>
 
 </body>
 </html>
