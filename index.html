@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Entrada</title>
 
     <!-- Google Fonts para a fonte Poppins -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
 
     <style>
         /* Aplicando a fonte Poppins em todo o texto */
@@ -22,6 +22,18 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
+            animation: fadeIn 2s ease-out; /* Animação de fade-in para o carregamento da página */
+            background-color: rgba(0, 0, 0, 0.3); /* Camada escura com 30% de opacidade */
+        }
+
+        /* Animação de fade-in */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
 
         header {
@@ -30,10 +42,19 @@
             background-color: transparent;
             color: white;
             font-size: 2.5em;
+            animation: headerAnimation 1.5s ease-in-out;
         }
 
-        header h4 {
-            margin: 0;
+        /* Animação para o cabeçalho */
+        @keyframes headerAnimation {
+            0% {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .content {
@@ -43,16 +64,38 @@
             align-items: center;
             text-align: center;
             padding: 40px;
+            animation: contentAnimation 2s ease-out;
+        }
+
+        /* Animação de entrada do conteúdo */
+        @keyframes contentAnimation {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .welcome-text {
-            color: black; /* Mudado para preto */
+            color: #fff; /* texto branco para contraste */
             font-size: 48px;
             font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
-            background-color: rgba(255, 255, 255, 0.7); /* Fundo branco semi-transparente */
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* sombra para destaque */
+            background-color: rgba(0, 0, 0, 0.4); /* fundo preto semi-transparente */
             padding: 30px;
-            border-radius: 15px; /* Arredondando os cantos do fundo */
+            border-radius: 15px; /* cantos arredondados */
+            opacity: 0;
+            animation: fadeInText 2s ease-out forwards;
+        }
+
+        /* Animação para o texto de boas-vindas */
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
         }
 
         .btn-link {
@@ -63,8 +106,17 @@
             font-weight: 600;
             text-decoration: none;
             border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            animation: fadeInButtons 2.5s ease-out forwards;
+        }
+
+        /* Animação de fade-in nos botões */
+        @keyframes fadeInButtons {
+            to {
+                opacity: 1;
+            }
         }
 
         .btn-pink {
@@ -74,7 +126,8 @@
 
         .btn-pink:hover {
             background-color: #d81b60;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 15px #e91e63, 0 0 30px #e91e63; /* Efeito de brilho */
         }
 
         .btn-green {
@@ -84,7 +137,8 @@
 
         .btn-green:hover {
             background-color: #218838;
-            transform: scale(1.05);
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 15px #28a745, 0 0 30px #28a745; /* Efeito de brilho */
         }
 
         footer {
@@ -94,25 +148,34 @@
             padding: 10px;
             margin-top: auto;
             width: 100%;
+            animation: footerAnimation 1.5s ease-in-out;
+        }
+
+        /* Animação para o footer */
+        @keyframes footerAnimation {
+            0% {
+                transform: translateY(50px);
+                opacity: 0;
+            }
+            100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
     </style>
 </head>
 <body>
 
-<header>
-    <!-- Cabeçalho pode ser adicionado aqui, se necessário -->
-</header>
-
 <div class="content">
     <div class="welcome-text">
-        Bem-vindo ao Ody Park!<br>
+        Bem-vindo ao Ody Park!<br />
         <a href="conheca.html" target="_blank" class="btn-link btn-green">Conheça o resort</a>
         <a href="cadastroo.html" target="_blank" class="btn-link btn-pink">Faça sua reserva</a>
     </div>
 </div>
 
 <footer>
-    &copy; 2025 Ody Park - Todos os direitos reservados
+    &copy; 2025 Ody Park - Ana Julia, Lorena, Maria e Sofia
 </footer>
 
 </body>
