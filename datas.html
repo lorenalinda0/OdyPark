@@ -36,6 +36,8 @@
             opacity: 0; /* Inicialmente invisível para animação */
             transform: translateY(-50px); /* Desliza do topo */
             transition: opacity 1s ease-out, transform 1s ease-out; /* Animação suave */
+            width: 100%; /* Garante que o contêiner ocupe toda a largura da tela */
+            max-width: 450px; /* Max largura para manter um limite */
         }
 
         h2 {
@@ -67,12 +69,12 @@
             background-color: #e91e63; /* rosa */
             color: white;
             border: none;
-            padding: 12px 0;
+            padding: 14px 0;  /* Mais padding para aumentar a altura do botão */
             cursor: pointer;
             text-align: center;
             text-decoration: none;
             border-radius: 30px; /* bordas arredondadas maiores */
-            width: 100%;
+            width: 100%; /* O botão ocupará 100% da largura do contêiner */
             box-sizing: border-box;
             margin-top: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
