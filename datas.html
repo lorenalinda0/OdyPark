@@ -91,27 +91,26 @@
 
     <div class="container" id="formContainer">
         <h2>Datas e Informações sobre a Hospedagem</h2>
-        <!-- Formulário com o atributo action que redireciona para 'pagamento.html' -->
-        <form >
-            <label for="checkin">Data de Check-in:</label>
-            <input id="checkin" name="checkin" type="date" required />
+        <!-- Removendo o <form> e apenas colocando o link de navegação -->
+        <label for="checkin">Data de Check-in:</label>
+        <input id="checkin" name="checkin" type="date" required />
 
-            <label for="checkout">Data de Check-out:</label>
-            <input id="checkout" name="checkout" type="date" required />
+        <label for="checkout">Data de Check-out:</label>
+        <input id="checkout" name="checkout" type="date" required />
 
-            <label for="pessoas">Quantidade de Pessoas:</label>
-            <input id="pessoas" name="pessoas" type="number" min="1" required />
+        <label for="pessoas">Quantidade de Pessoas:</label>
+        <input id="pessoas" name="pessoas" type="number" min="1" required />
 
-            <label for="quartos">Quantidade de Quartos:</label>
-            <input id="quartos" name="quartos" type="number" min="1" required />
+        <label for="quartos">Quantidade de Quartos:</label>
+        <input id="quartos" name="quartos" type="number" min="1" required />
 
-            <label for="vagas">Quantidade de vagas no estacionamento:</label>
-            <input id="vagas" name="vagas" type="number" min="0" required />
-        </form>
-          <!-- Alteração do tipo de botão para "button" -->
-           <a href="pagamento.html"> 
-               <button type="button">Próximo</button>
-           </a>
+        <label for="vagas">Quantidade de vagas no estacionamento:</label>
+        <input id="vagas" name="vagas" type="number" min="0" required />
+
+        <!-- Alteração do tipo de botão para "button" -->
+        <a href="pagamento.html">
+            <button type="button" class="btn">Próximo</button>
+        </a>
     </div>
 
     <script>
