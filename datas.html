@@ -91,7 +91,7 @@
 
     <div class="container" id="formContainer">
         <h2>Datas e Informações sobre a Hospedagem</h2>
-        <!-- Removendo o <form> e apenas colocando o link de navegação -->
+
         <label for="checkin">Data de Check-in:</label>
         <input id="checkin" name="checkin" type="date" required />
 
@@ -107,10 +107,8 @@
         <label for="vagas">Quantidade de vagas no estacionamento:</label>
         <input id="vagas" name="vagas" type="number" min="0" required />
 
-        <!-- Alteração do tipo de botão para "button" -->
-        <a href="pagamento.html">
-            <button type="button" class="btn">Próximo</button>
-        </a>
+        <!-- Usando o <a> diretamente, sem botão -->
+        <a href="pagamento.html" class="btn">Próximo</a>
     </div>
 
     <script>
