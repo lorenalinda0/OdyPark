@@ -1,58 +1,114 @@
-x<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ODY PARK</title>
-    <meta> 
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Entrada</title>
+
+    <!-- Google Fonts para a fonte Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+
     <style>
+        /* Aplicando a fonte Poppins em todo o texto */
         body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            background-image: url('capasite.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(0, 0, 0, 0.3); /* Camada escura com 30% de opacidade */
         }
-        .container {
-            max-width: 400px;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #ccc;
-            border-radius: 5px;
-            box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        label, input, textarea, button {
-            display: block;
-            width: 100%;
-            margin-bottom: 10px;
-        }
-        button {
-            background-color: #007BFF;
+
+        header {
+            text-align: center;
+            padding: 10px 20px;
+            background-color: transparent;
             color: white;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+            font-size: 2.5em;
         }
-        button:hover {
-            background-color: #0056b3;
+
+        .content {
+            flex-grow: 1;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .welcome-text {
+            color: #fff; /* texto branco para contraste */
+            font-size: 48px;
+            font-weight: bold;
+            text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8); /* sombra para destaque */
+            background-color: rgba(0, 0, 0, 0.4); /* fundo preto semi-transparente */
+            padding: 30px;
+            border-radius: 15px; /* cantos arredondados */
+        }
+
+        .btn-link {
+            display: inline-block;
+            margin: 40px 20px 0;
+            padding: 12px 30px;
+            font-size: 24px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-pink {
+            background-color: #e91e63;
+            color: white;
+        }
+
+        .btn-pink:hover {
+            background-color: #d81b60;
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 15px #e91e63, 0 0 30px #e91e63; /* Efeito de brilho */
+        }
+
+        .btn-green {
+            background-color: #28a745;
+            color: white;
+        }
+
+        .btn-green:hover {
+            background-color: #218838;
+            transform: scale(1.1);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3), 0 0 15px #28a745, 0 0 30px #28a745; /* Efeito de brilho */
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: auto;
+            width: 100%;
         }
     </style>
 </head>
-<body bgcolor="blue">
-    <font color="blue"> texto texto texto</font>
-    <div class="container">
-        <h2>ODY PARK</h2>
-        <form action="#" method="post">
-            <label for="nome">Nome:</label>
-            <input type="nome" id="nome" name="nome" required>
-           
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
+<body>
 
-            
-            <button type="submit">Próximo</button>
-            <a href="https://www.exemplo.com">Clique aqui para acessar o site</a>
-
-        </form>
-         <img src="ody.jpg">
+<div class="content">
+    <div class="welcome-text">
+        Bem-vindo ao Ody Park!<br />
+        <a href="conheca.html" target="_blank" class="btn-link btn-green">Conheça o resort</a>
+        <a href="cadastroo.html" target="_blank" class="btn-link btn-pink">Faça sua reserva</a>
     </div>
+</div>
 
-</body> 
-    </html>
+<footer>
+    &copy; 2025 Ody Park - Ana Julia, Lorena, Maria e Sofia
+</footer>
+
+</body>
+</html>
