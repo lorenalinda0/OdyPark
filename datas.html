@@ -64,16 +64,15 @@
             box-sizing: border-box;
         }
 
-        /* Estilo do link "Próximo" como botão */
-        a.btn {
+        /* Estilo do botão */
+        button.btn {
             background-color: #e91e63; /* rosa */
             color: white;
             border: none;
             padding: 14px 0;  /* Mais padding para aumentar a altura do botão */
             cursor: pointer;
             text-align: center;
-            text-decoration: none;
-            border-radius: 30px; /* bordas arredondadas maiores */
+            border-radius: 30px; /* Bordas arredondadas maiores */
             width: 100%; /* O botão ocupará 100% da largura do contêiner */
             box-sizing: border-box;
             margin-top: 15px;
@@ -83,7 +82,7 @@
             display: block;
         }
 
-        a.btn:hover {
+        button.btn:hover {
             background-color: #d81b60; /* rosa mais escuro no hover */
             transform: scale(1.05);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
@@ -111,8 +110,8 @@
         <label for="vagas">Quantidade de vagas no estacionamento:</label>
         <input id="vagas" name="vagas" type="number" min="0" required />
 
-        <!-- Usando o <a> diretamente, sem botão -->
-        <a href="pagamento.html" class="btn">Próximo</a>
+        <!-- Usando o <button> diretamente agora -->
+        <button type="button" class="btn" onclick="window.location.href='pagamento.html'">Próximo</button>
     </div>
 
     <script>
