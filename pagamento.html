@@ -118,6 +118,7 @@
         <p><strong>Estamos quase lá! Revise suas informações e finalize sua compra com segurança.</strong></p>
         <p><strong>Valor total: R$ 550,00</strong></p>
 
+        <!-- Formulário de seleção de pagamento -->
         <form action="agradecimento2.html" method="post">
             <label for="pagamento">Selecione a forma de pagamento:</label>
             <select id="pagamento" name="formaPagamento" required>
@@ -127,10 +128,9 @@
                 <option value="credito">Cartão de Crédito</option>
             </select>
         </form>
-          <!-- Alteração do tipo de botão para "button" -->
-           <a href="agradecimento2.html"> 
-               <button type="button">Próximo</button>
-           </a>
+
+        <!-- Usando o <a> diretamente para navegação -->
+        <a href="agradecimento2.html" class="btn">Próximo</a>
     </div>
 
     <script>
