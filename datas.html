@@ -95,23 +95,26 @@
     <div class="container" id="formContainer">
         <h2>Datas e Informações sobre a Hospedagem</h2>
 
-        <label for="checkin">Data de Check-in:</label>
-        <input id="checkin" name="checkin" type="date" required />
+        <!-- Iniciando o formulário -->
+        <form id="hospedagemForm" action="pagamento.html" method="GET">
+            <label for="checkin">Data de Check-in:</label>
+            <input id="checkin" name="checkin" type="date" required />
 
-        <label for="checkout">Data de Check-out:</label>
-        <input id="checkout" name="checkout" type="date" required />
+            <label for="checkout">Data de Check-out:</label>
+            <input id="checkout" name="checkout" type="date" required />
 
-        <label for="pessoas">Quantidade de Pessoas:</label>
-        <input id="pessoas" name="pessoas" type="number" min="1" required />
+            <label for="pessoas">Quantidade de Pessoas:</label>
+            <input id="pessoas" name="pessoas" type="number" min="1" required />
 
-        <label for="quartos">Quantidade de Quartos:</label>
-        <input id="quartos" name="quartos" type="number" min="1" required />
+            <label for="quartos">Quantidade de Quartos:</label>
+            <input id="quartos" name="quartos" type="number" min="1" required />
 
-        <label for="vagas">Quantidade de vagas no estacionamento:</label>
-        <input id="vagas" name="vagas" type="number" min="0" required />
+            <label for="vagas">Quantidade de vagas no estacionamento:</label>
+            <input id="vagas" name="vagas" type="number" min="0" required />
 
-        <!-- Usando o <button> diretamente agora -->
-        <button type="button" class="btn" onclick="window.location.href='pagamento.html'">Próximo</button>
+            <!-- Botão de envio com validação -->
+            <button type="submit" class="btn">Próximo</button>
+        </form>
     </div>
 
     <script>
