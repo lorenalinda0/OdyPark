@@ -87,6 +87,17 @@
             transform: scale(1.05);
             box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
         }
+
+        .required-text {
+            font-size: 14px;
+            color: #999;
+            margin-top: -10px;
+        }
+
+        .required-text span {
+            color: red;
+            font-weight: bold;
+        }
     </style>
 </head>
 
@@ -97,20 +108,25 @@
 
         <!-- Iniciando o formulário -->
         <form id="hospedagemForm" action="pagamento.html" method="GET">
-            <label for="checkin">Data de Check-in:</label>
+            <label for="checkin">Data de Check-in: <span>*</span></label>
             <input id="checkin" name="checkin" type="date" required />
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
 
-            <label for="checkout">Data de Check-out:</label>
+            <label for="checkout">Data de Check-out: <span>*</span></label>
             <input id="checkout" name="checkout" type="date" required />
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
 
-            <label for="pessoas">Quantidade de Pessoas:</label>
+            <label for="pessoas">Quantidade de Pessoas: <span>*</span></label>
             <input id="pessoas" name="pessoas" type="number" min="1" required />
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
 
-            <label for="quartos">Quantidade de Quartos:</label>
+            <label for="quartos">Quantidade de Quartos: <span>*</span></label>
             <input id="quartos" name="quartos" type="number" min="1" required />
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
 
-            <label for="vagas">Quantidade de vagas no estacionamento:</label>
+            <label for="vagas">Quantidade de vagas no estacionamento: <span>*</span></label>
             <input id="vagas" name="vagas" type="number" min="0" required />
+            <div class="required-text"><span>*</span> Este campo é obrigatório.</div>
 
             <!-- Botão de envio com validação -->
             <button type="submit" class="btn">Próximo</button>
