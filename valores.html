@@ -191,18 +191,8 @@
 
     // Adiciona um evento de clique no botão
     reserveButton.addEventListener('click', function(event) {
-        // Impede que o link seja seguido imediatamente
-        event.preventDefault();
-        
-        // Exibe uma mensagem de confirmação
-        const userConfirmed = confirm("Deseja realmente reservar sua viagem?");
-
-        // Se o usuário confirmar, redireciona para a página de reserva
-        if (userConfirmed) {
-            window.location.href = reserveButton.href; // Redireciona para o link do botão
-        } else {
-            alert("A reserva foi cancelada.");
-        }
+        // O link é seguido normalmente
+        window.location.href = reserveButton.href;
     });
 </script>
 
