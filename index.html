@@ -22,18 +22,7 @@
             background-position: center;
             background-repeat: no-repeat;
             background-attachment: fixed;
-            animation: fadeIn 2s ease-out; /* Animação de fade-in para o carregamento da página */
             background-color: rgba(0, 0, 0, 0.3); /* Camada escura com 30% de opacidade */
-        }
-
-        /* Animação de fade-in */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
         }
 
         header {
@@ -42,19 +31,6 @@
             background-color: transparent;
             color: white;
             font-size: 2.5em;
-            animation: headerAnimation 1.5s ease-in-out;
-        }
-
-        /* Animação para o cabeçalho */
-        @keyframes headerAnimation {
-            0% {
-                transform: translateY(-50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
 
         .content {
@@ -64,19 +40,6 @@
             align-items: center;
             text-align: center;
             padding: 40px;
-            animation: contentAnimation 2s ease-out;
-        }
-
-        /* Animação de entrada do conteúdo */
-        @keyframes contentAnimation {
-            0% {
-                transform: scale(0.8);
-                opacity: 0;
-            }
-            100% {
-                transform: scale(1);
-                opacity: 1;
-            }
         }
 
         .welcome-text {
@@ -88,14 +51,7 @@
             padding: 30px;
             border-radius: 15px; /* cantos arredondados */
             opacity: 0;
-            animation: fadeInText 2s ease-out forwards;
-        }
-
-        /* Animação para o texto de boas-vindas */
-        @keyframes fadeInText {
-            to {
-                opacity: 1;
-            }
+            transform: translateY(-50px); /* posição inicial fora da tela */
         }
 
         .btn-link {
@@ -108,15 +64,6 @@
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
-            opacity: 0;
-            animation: fadeInButtons 2.5s ease-out forwards;
-        }
-
-        /* Animação de fade-in nos botões */
-        @keyframes fadeInButtons {
-            to {
-                opacity: 1;
-            }
         }
 
         .btn-pink {
@@ -148,19 +95,6 @@
             padding: 10px;
             margin-top: auto;
             width: 100%;
-            animation: footerAnimation 1.5s ease-in-out;
-        }
-
-        /* Animação para o footer */
-        @keyframes footerAnimation {
-            0% {
-                transform: translateY(50px);
-                opacity: 0;
-            }
-            100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
         }
     </style>
 </head>
@@ -169,8 +103,8 @@
 <div class="content">
     <div class="welcome-text">
         Bem-vindo ao Ody Park!<br />
-        <a href="conheca.html" target="_blank" class="btn-link btn-green" id="btnConheca">Conheça o resort</a>
-        <a href="cadastroo.html" target="_blank" class="btn-link btn-pink" id="btnReserva">Faça sua reserva</a>
+        <a href="conheca.html" target="_blank" class="btn-link btn-green">Conheça o resort</a>
+        <a href="cadastroo.html" target="_blank" class="btn-link btn-pink">Faça sua reserva</a>
     </div>
 </div>
 
@@ -178,28 +112,16 @@
     &copy; 2025 Ody Park - Ana Julia, Lorena, Maria e Sofia
 </footer>
 
-<!-- Adicionando JavaScript -->
 <script>
-    // Função para confirmar a navegação
-    function confirmarNavegacao(event, link) {
-        const confirmacao = confirm("Deseja mesmo seguir para esta página?");
-        if (!confirmacao) {
-            event.preventDefault(); // Impede a navegação caso o usuário cancele
-        }
-    }
+    // Função para animar o texto de boas-vindas
+    window.onload = function() {
+        var welcomeText = document.querySelector('.welcome-text');
 
-    // Pegando os botões
-    const btnConheca = document.getElementById('btnConheca');
-    const btnReserva = document.getElementById('btnReserva');
-
-    // Adicionando eventos de clique com confirmação para os botões
-    btnConheca.addEventListener('click', function(event) {
-        confirmarNavegacao(event, btnConheca.href);
-    });
-
-    btnReserva.addEventListener('click', function(event) {
-        confirmarNavegacao(event, btnReserva.href);
-    });
+        // Adiciona a animação com JS, removendo o transform e alterando a opacidade
+        welcomeText.style.transition = "transform 1s ease, opacity 1s ease";
+        welcomeText.style.transform = "translateY(0)";
+        welcomeText.style.opacity = "1";
+    };
 </script>
 
 </body>
