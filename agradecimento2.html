@@ -83,15 +83,25 @@
     }
 
     @keyframes pulse {
-      0% {
-        text-shadow: 0 0 6px rgba(233, 30, 99, 0.7);
-      }
-      50% {
-        text-shadow: 0 0 12px rgba(233, 30, 99, 1);
-      }
-      100% {
-        text-shadow: 0 0 6px rgba(233, 30, 99, 0.7);
-      }
+      0% { text-shadow: 0 0 6px rgba(233, 30, 99, 0.7); }
+      50% { text-shadow: 0 0 12px rgba(233, 30, 99, 1); }
+      100% { text-shadow: 0 0 6px rgba(233, 30, 99, 0.7); }
+    }
+
+    .copy-btn {
+      margin-top: 10px;
+      padding: 8px 16px;
+      font-size: 1em;
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      background-color: #c2185b;
     }
   </style>
 </head>
@@ -104,9 +114,27 @@
 
     <div class="contact-info">
       <p>Se precisar de mais informações ou assistência, não hesite em nos contactar:</p>
-      <p><strong>Telefone:</strong> <a href="tel:+550000000000">+55 (00) 0000-0000</a></p>
+      <p><strong>Telefone:</strong> <a id="phoneLink" href="tel:+550000000000">+55 (00) 0000-0000</a></p>
+      <button class="copy-btn" onclick="copiarTelefone()">Copiar número</button>
     </div>
   </div>
+
+  <script>
+    // Mensagem automática ao carregar a página
+    window.addEventListener('load', function () {
+      alert('Sua reserva foi confirmada! Bem-vindo ao Odypark 🌿');
+    });
+
+    // Função para copiar o número de telefone
+    function copiarTelefone() {
+      const telefone = document.getElementById('phoneLink').textContent;
+      navigator.clipboard.writeText(telefone).then(() => {
+        alert('Número copiado para a área de transferência!');
+      }).catch(err => {
+        alert('Erro ao copiar número: ' + err);
+      });
+    }
+  </script>
 
 </body>
 </html>
