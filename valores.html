@@ -177,12 +177,34 @@
 </div>
 
 <nav>
-    <a href="agradecimento1.html" target="_blank" class="brilho-bounce">Reserve sua viagem!</a>
+    <a href="agradecimento1.html" target="_blank" class="brilho-bounce" id="reserveBtn">Reserve sua viagem!</a>
 </nav>
 
 <footer>
     &copy; 2025 Ody Park -Ana Julia, Lorena, Maria e Sofia
 </footer>
+
+<!-- JavaScript -->
+<script>
+    // Seleciona o botão de reserva
+    const reserveButton = document.getElementById('reserveBtn');
+
+    // Adiciona um evento de clique no botão
+    reserveButton.addEventListener('click', function(event) {
+        // Impede que o link seja seguido imediatamente
+        event.preventDefault();
+        
+        // Exibe uma mensagem de confirmação
+        const userConfirmed = confirm("Deseja realmente reservar sua viagem?");
+
+        // Se o usuário confirmar, redireciona para a página de reserva
+        if (userConfirmed) {
+            window.location.href = reserveButton.href; // Redireciona para o link do botão
+        } else {
+            alert("A reserva foi cancelada.");
+        }
+    });
+</script>
 
 </body>
 </html>
