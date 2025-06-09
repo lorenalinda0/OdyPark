@@ -169,14 +169,38 @@
 <div class="content">
     <div class="welcome-text">
         Bem-vindo ao Ody Park!<br />
-        <a href="conheca.html" target="_blank" class="btn-link btn-green">Conheça o resort</a>
-        <a href="cadastroo.html" target="_blank" class="btn-link btn-pink">Faça sua reserva</a>
+        <a href="conheca.html" target="_blank" class="btn-link btn-green" id="btnConheca">Conheça o resort</a>
+        <a href="cadastroo.html" target="_blank" class="btn-link btn-pink" id="btnReserva">Faça sua reserva</a>
     </div>
 </div>
 
 <footer>
     &copy; 2025 Ody Park - Ana Julia, Lorena, Maria e Sofia
 </footer>
+
+<!-- Adicionando JavaScript -->
+<script>
+    // Função para confirmar a navegação
+    function confirmarNavegacao(event, link) {
+        const confirmacao = confirm("Deseja mesmo seguir para esta página?");
+        if (!confirmacao) {
+            event.preventDefault(); // Impede a navegação caso o usuário cancele
+        }
+    }
+
+    // Pegando os botões
+    const btnConheca = document.getElementById('btnConheca');
+    const btnReserva = document.getElementById('btnReserva');
+
+    // Adicionando eventos de clique com confirmação para os botões
+    btnConheca.addEventListener('click', function(event) {
+        confirmarNavegacao(event, btnConheca.href);
+    });
+
+    btnReserva.addEventListener('click', function(event) {
+        confirmarNavegacao(event, btnReserva.href);
+    });
+</script>
 
 </body>
 </html>
